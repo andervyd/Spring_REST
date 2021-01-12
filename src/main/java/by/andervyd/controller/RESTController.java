@@ -7,6 +7,7 @@ import by.andervyd.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,6 +60,14 @@ public class RESTController {
         employeeService.savingEmployeeData(employee);
 
         return  employee;
+    }
+
+    @DeleteMapping("/employees/{id}")
+    public String deleteEmployee(@PathVariable Long id) {
+
+        employeeService.deleteEmployee(id);
+
+        return  "Employee with ID: " + id + " was delete.";
     }
 
 /* Local exception handler
