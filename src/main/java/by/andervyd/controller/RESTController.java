@@ -42,6 +42,8 @@ public class RESTController {
         return  employee;
     }
 
+/* Local exception handler
+
     @ExceptionHandler
     public ResponseEntity<EmployeeIncorrectData> handleException(NoSuchEmployeeException exception) {
 
@@ -59,4 +61,5 @@ public class RESTController {
 
         return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
     }
+*/
 }
